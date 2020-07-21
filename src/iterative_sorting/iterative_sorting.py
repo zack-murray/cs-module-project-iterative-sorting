@@ -50,6 +50,8 @@ showed up, we can construct a sorted set of the input data from the
 buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
+
+Time complexity / space complexity = Θ(n+k) / O(k)
 '''
 def counting_sort(arr, maximum=None):
     # If there's no values in the array
@@ -81,7 +83,7 @@ def counting_sort(arr, maximum=None):
         buckets[i] += buckets[i-1]
         # To output this into a sorted list, its saying that 1 is in slot 2,
         # then subtract 1 and put it in slot 1 as well. 2 is in slot 4, subtract
-        # by one and also put it in slot 3 7:35 4 in slot 5, subtract by 1 and so on
+        # by one and also put it in slot 3, 4 in slot 5, subtract by 1 and so on
         # to get [1,1,2,2,4,5,7]
         arr[i] = buckets[i] -1
     
